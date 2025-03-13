@@ -1,0 +1,41 @@
+{
+	"name": "Hello Word GO",
+	"dockerFile": "Dockerfile",
+	"context": "..",
+	"runArgs": [
+		"--network",
+		"host",
+		"--env-file",
+		".devcontainer/.env"
+	],
+	"postCreateCommand": "echo 'Welcome!! Ya puedes trabajar'",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"go.environment.status": "enabled",
+				"go.gopath": "/go",
+				"go.goroot": "/usr/local/go",
+				"go.toolsGopath": "/go",
+				"go.useLanguageServer": true,
+				"go.formatTool": "gofmt",
+				"go.lintTool": "golangci-lint",
+				"go.toolsManagement.autoUpdate": false,
+				"go.toolsManagement.enabled": false,
+				"go.toolsManagement.installDependencies": "tools",
+				"terminal.integrated.shell.linux": "/bin/bash",
+				"codetime.getToken": "${env:CODETIME_TOKEN}",
+				"codetime.statusBarInfo": "24h",
+				"git.enabled": true,
+				"git.autofetch": true,
+				"git.confirmSync": false
+			},
+			"extensions": [
+				"golang.go",
+				"streetsidesoftware.code-spell-checker",
+				"jannchie.codetime",
+				"pomdtr.excalidraw-editor",
+				"vscode.git" 
+			]
+		}
+	}
+}
