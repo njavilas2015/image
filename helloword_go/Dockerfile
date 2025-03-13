@@ -1,8 +1,9 @@
-FROM golang:1.21 AS builder
+FROM golang:1.23 AS builder
 
 WORKDIR /app
 
 COPY main.go .
+COPY go.mod .
 
 RUN go build -o backend
 
